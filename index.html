@@ -19,31 +19,50 @@
 <body class="text-light">
     <div class="container">
         <div class="row center-items">
+            <div class="center-items col-md-10">
+                <h1 class="text-center m-5">Lingua do p</h1>
+            </div>
+            
+            <!-- L-side -->
             <div class="col-lg-5 col-md-10 col-sm-10">
 
-                <h1 class="title">Traducao do P</h1>
+                <p class="h2">Traducao do P</p>
                 
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Texto aqui</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite o texto a ser traduzido">
+                    <label for="text_field_l-side" class="form-label">Texto aqui</label>
+                    <textarea type="text" class="form-control" id="P_to_PT_input" placeholder="Digite o texto a ser traduzido para português" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Traducao</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="P_to_PT_output" disabled rows="3"></textarea>
                 </div>
+
+                <a href="#" class="b-trans-a" id="l-btn"">
+                    <div class="b-trans-div b-trans-div-l">
+                        Traduzir
+                    </div>
+                </a>
+                
             </div>
 
-            <div class="col-lg-5 col-md-10 col-sm-10">
-                <h1 class="title">P para PT</h1>
+            <!-- R-Side -->
+            <div class="center-items  col-lg-5 col-md-10 col-sm-10">
+                <p class="h2">P para PT</p>
                 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Texto aqui</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite o texto a ser traduzido">
+                    <textarea type="email" class="form-control" id="PT_to_P_input" placeholder="Digite o texto a ser traduzido" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Traducao</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="PT_to_P_output" rows="3" disabled></textarea>
                 </div>
+
+                <a href="#" class="b-trans-a" id="r-btn">
+                    <div class="b-trans-div b-trans-div-r">
+                        DesTraduzir
+                    </div>
+                </a>
             </div>
         </div>
     
