@@ -112,7 +112,7 @@ function separated_to_arr(word_arr){
 function invert_arr_word(word_arr){
     new_arr = []
     len = word_arr.length
-    alert("Vai quebrar: " + len + word_arr)
+    // alert("Vai quebrar: " + len + word_arr)
     console.log(`via quebrar? ${word_arr}`)
     console.log(len)
     console.log(word_arr)
@@ -129,29 +129,32 @@ function separate_sylbs(phrase_arr){
     console.log(phrase_arr)
 
     //passando por cada palavra e separando as silabas
-    let new_wordd = ""
-    let new_phrase = ""
+    var new_phrase = ""
     
-    for( i = 0; i < phrase_arr.length; i++){
+    // para cada palavra no array...
+    for( var i = 0; i < phrase_arr.length; i++){
         
+        var new_wordd = ""
         let actual_word = phrase_arr[i];
-        separated_word = syllable(actual_word)
-        inverted_arr = invert_arr_word(separated_to_arr(separated_word))
+        let separated_word = syllable(actual_word)
+        let inverted_arr = invert_arr_word(separated_to_arr(separated_word))
         // console.log(`Palara invertida?${i}: ${inverted_arr}`)
-        // console.log(inverted_arr)
+        console.log("palavra invertidda: ")
+        console.log(inverted_arr)
         // #####################
 
-
-        for(j = 0; j < inverted_arr.length; j++){
+        // ivnertendo a palvra atual
+        for( var j = 0; j < inverted_arr.length; j++){
             new_wordd += inverted_arr[j]
         }
         
-        console.log("nova palavra depois do for: " + new_wordd)
-
-        new_phrase += " " + new_wordd
+        console.log("palavra: " + new_wordd)
+        new_phrase = new_phrase + " " + new_wordd + " "
         new_phrase = new_phrase.trim()
+        
     }
-    console.log(`Nova palavra: ${new_wordd} || novaFrase: ${new_phrase}`)
+    console.log(`NovaFrase: ${new_phrase}`)
+    return new_phrase
 }
 
 function get_phrase(side){
@@ -171,6 +174,7 @@ function PT_to_P(){
 
 
     separated_syl = separate_sylbs(phrase_arr)
+    document.getElementById("P_to_PT_output").innerHTML = separated_syl
 
 }
 // ================================================
