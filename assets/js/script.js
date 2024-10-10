@@ -180,7 +180,15 @@ function PT_to_P(){
 // ================================================
 
 function P_to_PT(){
-    alert("Lingua do PÊ")
+    document.getElementById("P_to_PT_output").innerHTML = ""
+    
+    var phrase = get_phrase("r")
+    var phrase_arr = phrase_to_array(phrase)
+    
+    var separated_syl = separate_sylbs(phrase_arr)
+
+    document.getElementById("P_to_PT_output").innerHTML = separated_syl
+
 }
 
 // Getting l_btn...
