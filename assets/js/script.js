@@ -103,20 +103,19 @@ function syllable(word, opts = {}) {
 
 // fitlrar a palvra para array
 function separated_to_arr(word_arr){
-    console.log(word_arr)
-    new_word = word_arr.split("|")
+    var new_word = word_arr.split("|")
     return new_word
 }
 
 //recebe a palavra em array e inverte
 function invert_arr_word(word_arr){
-    new_arr = []
-    len = word_arr.length
+    var new_arr = []
+    var len = word_arr.length
     // alert("Vai quebrar: " + len + word_arr)
     console.log(`via quebrar? ${word_arr}`)
     console.log(len)
     console.log(word_arr)
-    for(i=0; i < len; i++){
+    for( i=0; i < len; i++ ){
         new_arr[i] = word_arr[len - i - 1]
     }
     console.log("nova palavra: " + new_arr)
@@ -158,7 +157,7 @@ function separate_sylbs(phrase_arr){
 }
 
 function get_phrase(side){
-    phrase = document.getElementById("l" ? "P_to_PT_input" : "PT_to_P_input")
+    phrase = document.getElementById(side == "l" ? "PT_to_P_input" : "P_to_PT_input")
     return phrase.value
 }
 
@@ -167,18 +166,21 @@ function phrase_to_array(phrase){
     return phrase.trim().split(" ")
 }
 
-// main_funcion
+// main_funcion L-side
 function PT_to_P(){
-    phrase = get_phrase("l")
-    phrase_arr = phrase_to_array(phrase)
+    document.getElementById("PT_to_P_output").innerHTML = ""
+    
+    var phrase = get_phrase("l")
+    var phrase_arr = phrase_to_array(phrase)
 
 
-    separated_syl = separate_sylbs(phrase_arr)
-    document.getElementById("P_to_PT_output").innerHTML = separated_syl
+    var separated_syl = separate_sylbs(phrase_arr)
+    document.getElementById("PT_to_P_output").innerHTML = separated_syl
 
 }
 // ================================================
 
+// main untranslate  R-side
 function P_to_PT(){
     document.getElementById("P_to_PT_output").innerHTML = ""
     
